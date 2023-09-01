@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cement Strength Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="login">
+            <h1 class="text-center mb-4">Cement Strength Prediction</h1>
+
+            <form action="{{ url_for('predict')}}"method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Material Quantity (gm)" placeholder="Material Quantity (gm)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Additive Catalyst (gm)" placeholder="Additive Catalyst (gm)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Ash Component (gm)Water Mix (ml)" placeholder="Ash Component (gm)Water Mix (ml)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Water Mix (ml)" placeholder="Water Mix (ml)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Plasticizer (gm)" placeholder="Plasticizer (gm)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Moderate Aggregator" placeholder="Moderate Aggregator" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Refined Aggregator" placeholder="Refined Aggregator" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Formulation Duration (hrs)" placeholder="Formulation Duration (hrs)" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            </form>
+            
+            <div class="text-center mt-3">
+                <h4>{{prediction_text}}</h4>
+            </div>
+        </div>
+    </div>
+    <!-- {{prediction_text}} -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html
